@@ -1,16 +1,16 @@
 package com.example.pi06log;
 
 import android.os.Bundle;
+import android.R.integer;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	int mCount = 0;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,25 +24,38 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	// ボタン
+	// ログ出力ボタン
+	int mLogCount = 0;
 	public void buttonMethodLog(View _button){
 		Button button = (Button)_button;
 		String s = button.getText().toString();
 		if(s.equals("V")){
-			Log.v("pi", "message" + mCount++);
+			Log.v("pi", "message" + mLogCount++);
 		}
 		else if(s.equals("D")){
-			Log.d("pi", "message" + mCount++);
+			Log.d("pi", "message" + mLogCount++);
 		}
 		else if(s.equals("I")){
-			Log.i("pi", "message" + mCount++);
+			Log.i("pi", "message" + mLogCount++);
 		}
 		else if(s.equals("W")){
-			Log.w("pi", "message" + mCount++);
+			Log.w("pi", "message" + mLogCount++);
 		}
 		else if(s.equals("E")){
-			Log.e("pi", "message" + mCount++);
+			Log.e("pi", "message" + mLogCount++);
 		}
+	}
+	
+	// 何かしらの計算ボタン
+	int mCalc = 0;
+	int mCount = 0;
+	public void buttonMethodCalc(View button){
+		if(++mCount >= 5){
+			mCalc -= 7;
+		}
+		mCalc = (mCalc + 1) * 2;
+		TextView text = (TextView)findViewById(R.id.textViewCalc);
+		text.setText(Integer.toString(mCalc));
 	}
 
 }
