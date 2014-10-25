@@ -59,11 +59,19 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="(2) 各メソッドをオーバーライドしログ埋め込み"
+        android:textSize="18sp" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Breakpoint"
+        android:text="(3) Breakpoint"
         android:textSize="18sp" />
 
     <LinearLayout
@@ -85,5 +93,20 @@
             android:text="TextView" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="(4) ErrorExit"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonMethodError"
+        android:text="異常終了するボタン" />
 
 </LinearLayout>

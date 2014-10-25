@@ -51,11 +51,22 @@ public class MainActivity extends Activity {
 	int mCount = 0;
 	public void buttonMethodCalc(View button){
 		if(++mCount >= 5){
-			mCalc -= 7;
+			mCalc -= 10;
 		}
 		mCalc = (mCalc + 1) * 2;
 		TextView text = (TextView)findViewById(R.id.textViewCalc);
 		text.setText(Integer.toString(mCalc));
+	}
+	
+	// 異常終了するボタン
+	TextView mText;
+	public void buttonMethodError(View button){
+		int n = 10;
+		int m = 20;
+		n *= m;
+		mText.setText("Hello bad pi " + n);
+		mCalc++;
+		mCount = 0;
 	}
 
 }
